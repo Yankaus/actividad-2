@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    font-size:  2em;
+}
+
+.contenedor {
+    background-color: black;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    border-top: .1em solid black;
+}
+
+.bloque {
+    border-left-width: .1em;
+    border-bottom-width: .1em;
+    border-right-width: .1em;
+
+    border-color: black;
+    border-style: solid;
+
+    height: 100%;
+}
+
+.numero {
+    display: flex;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* --------- ESCRITORIO ---------- */
+
+.uno_dos {
+    flex: 2;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 0;
+}
+
+.tres_seis {
+    flex: 1;
+
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.uno,
+.dos {
+    width: 50%;
+}
+
+.tres,
+.cuatro,
+.cinco,
+.seis {
+    width: 25%;
+}
+
+.uno {
+    background-color: rgb(174, 255, 187);
+}
+
+.dos {
+    background-color: rgb(244, 253, 174);
+}
+
+.tres,
+.cuatro {
+    background-color: rgb(255, 170, 170);
+}
+
+.cinco,
+.seis {
+    background-color: rgb(255, 170, 170);
+}
+
+
+/* -------- MOBILE --------- */
+
+@media screen and (width <= 600px) {
+
+    .uno_dos {
+        flex: 2;
+
+        flex-direction: column;
+
+        gap: 5%;
+    }
+
+    .tres_seis {
+        flex: 1;
+
+        flex-wrap: wrap;
+    }
+
+    .uno,
+    .dos {
+        width: 100%;
+    }
+
+    .tres,
+    .cuatro,
+    .cinco,
+    .seis {
+        width: 50%;
+    }
+
+    .uno {
+        flex: 1;
+        background-color: rgb(174, 255, 187);
+    }
+
+    .dos {
+        flex: 1;
+        background-color: rgb(244, 253, 174);
+    }
+
+    .tres,
+    .cuatro {
+        background-color: rgb(255, 170, 170);
+    }
+
+    .cinco,
+    .seis {
+        background-color: rgb(178, 182, 255);
+    }
+}
+
+
+/* ------------TAMAÑO DEL NÚMERO------------  */
+
+@media screen and (width > 600px) {
+
+    .numero {
+        font-size: 1.2em;
+    }
+
+}

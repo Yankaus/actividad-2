@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    font-size:  2em;
+}
+
+.contenedor {
+    background-color: black;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    border-top: .1em solid black;
+}
+
+.bloque {
+    border-left-width: .1em;
+    border-bottom-width: .1em;
+    border-right-width: .1em;
+
+    border-color: black;
+    border-style: solid;
+
+    height: 100%;
+}
+
+.numero {
+    display: flex;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ------ ESCRITORIO -------- */
+
+.uno_dos,
+.tres_cuatro,
+.cinco_seis {
+    flex: 1;
+
+    display: flex;
+}
+
+.uno,
+.dos,
+.tres,
+.cuatro,
+.cinco,
+.seis {
+    width: 50%;
+}
+
+.uno,
+.dos {
+    background-color: rgb(174, 255, 187);
+}
+
+.tres,
+.cuatro {
+    background-color: rgb(244, 253, 174);
+}
+
+.cinco {
+    background-color: rgb(255, 170, 170);
+}
+
+.seis {
+    background-color: rgb(178, 182, 255);
+}
+
+
+/* --------- MOBILE ---------- */
+
+@media screen and (width <= 600px) {
+
+    .uno_dos,
+    .tres_cuatro,
+    .cinco_seis {
+        flex: 1;
+    }
+
+
+    /* ----------1 y 2----------    */
+
+    .uno_dos {
+        order: 3;
+
+        flex-direction: column;
+    }
+
+    .uno,
+    .dos {
+        width: 100%;
+    }
+
+
+    /* --------------3 y 4----------- */
+
+    .tres_cuatro {
+        order: 2;
+
+        flex-direction: row;
+    }
+
+    .tres,
+    .cuatro {
+        width: 50%;
+    }
+
+
+    /* 5 y 6 */
+
+    .cinco_seis {
+        order: 1;
+
+        flex-direction: column;
+    }
+
+    .cinco,
+    .seis {
+        width: 100%;
+    }
+
+
+    /*------------ Orden de 5 y 6------------- */
+
+    .seis {
+        order: 1;
+    }
+
+    .cinco {
+        order: 2;
+    }
+
+
+    /* --------Orden de 1 y 2 -----------*/
+
+    .dos {
+        order: 1;
+    }
+
+    .uno {
+        order: 2;
+    }
+
+
+    /*---------- Colores-------------- */
+
+    .uno,
+    .dos {
+        background-color: rgb(174, 255, 187);
+    }
+
+    .tres,
+    .cuatro {
+        background-color: rgb(244, 253, 174);
+    }
+
+    .cinco {
+        background-color: rgb(255, 170, 170);
+    }
+
+    .seis {
+        background-color: rgb(178, 182, 255);
+    }
+
+}
+
+
+/* ------------TAMAÑO DEL NÚMERO------------  */
+
+@media screen and (width > 600px) {
+
+    .numero {
+        font-size: 1.2em;
+    }
+
+}

@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    font-size: 2em;
+}
+
+.contenedor {
+    background-color: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: .1em solid black;
+}
+
+.bloque {
+    border-left-width: .1em;
+    border-bottom-width: .1em;
+    border-right-width: .1em;
+    border-color: black;
+    border-style: solid;
+    height: 100%;
+}
+
+.numero {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*--------- COLORES ---------*/
+
+.uno,
+.dos {
+    background-color: rgb(174, 255, 187);
+}
+
+.tres,
+.cuatro {
+    background-color: rgb(244, 253, 174);
+}
+
+.cinco {
+    background-color: rgb(255, 170, 170);
+}
+
+.seis {
+    background-color: rgb(178, 182, 255);
+}
+
+
+/* --------- CELULAR--------- */
+
+.uno_cuatro,
+.cinco_seis {
+    display: flex;
+    flex-direction: column;
+}
+
+.uno_cuatro {
+    flex: 2;
+}
+
+.cinco_seis {
+    flex: 1;
+}
+
+
+/*--------- TABLET------------ */
+
+@media screen and (width > 600px) {
+
+    .uno_cuatro,
+    .cinco_seis {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .numero {
+        font-size: 1.2em;
+    }
+}
+
+
+/* ----------PC---------- */
+
+@media screen and (width > 1024px) {
+
+    .uno {
+        grid-area: uno;
+    }
+
+    .dos {
+        grid-area: dos;
+        background-color: rgb(244, 253, 174);
+    }
+
+    .tres {
+        grid-area: tres;
+    }
+
+    .cuatro {
+        grid-area: cuatro;
+        background-color: rgb(174, 255, 187);
+    }
+
+    .uno_cuatro {
+        display: grid;
+
+        grid-template-columns: 1fr 2fr 1fr;
+
+        grid-template-rows: 1fr 1fr;
+
+        grid-template-areas:
+            "uno dos cuatro"
+            "uno tres cuatro";
+    }
+
+    .cinco_seis {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
